@@ -20,21 +20,23 @@
             padding-top: 90px;
         }
 
-    
+
         .navbar {
             position: fixed;
             top: 0;
             width: 100%;
             display: flex;
-            justify-content:space-around;
+            justify-content: space-between;
             align-items: center;
-            background-color: #ffffff;
-            padding: 10px;
+            background-color: #FFAF14;
+            padding: 10px 20px;
             z-index: 2;
         }
+
         .navbar img {
-            height: 50px; /* Tamanho da logo */
+            height: 40px;
         }
+
         .navbar-links {
             display: flex;
             align-items: center;
@@ -42,22 +44,42 @@
         .icon {
             cursor: pointer;
             font-size: 24px;
-            color: #6c757d;
+            color: #ffffff;
             padding: 8px;
-            margin-left: 20px; /* Espaçamento entre os ícones */
+            margin-left: 20px;
             border-radius: 50%;
+            transition: background-color 0.3s;
         }
+
+        .icon:hover {
+            background-color: #444;
+            border-radius: 100px;
+        }
+
+        .icon-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
         .dropdown-menu {
             display: none;
             position: absolute;
             top: 60px;
             right: 10px;
-            background-color: #f9f9f9;
-            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+            background-color: #ffffff;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
             padding: 12px 16px;
             z-index: 3;
         }
-        .show { display: block; }
+
+        .dropdown-menu a {
+            color: #333;
+            text-decoration: none;
+        }
+
+        .show {
+            display: block;
+        }
 
         .content {
             display: flex;
@@ -85,41 +107,45 @@
             text-align: center;
         }
 
-        .box i {
-            /* Estilo para os ícones */
+        .icon-box i {
             font-size: 24px;
-            /* Aumenta o tamanho do ícone */
             margin-bottom: 8px;
-            /* Espaço entre o ícone e o texto */
+            color: #333;
         }
 
-        .box p {
-            /* Estilo para o texto abaixo dos ícones */
+        .icon-box p {
             margin: 0;
-            /* Remove a margem padrão */
             font-size: 14px;
-            /* Ajusta o tamanho da fonte */
+            color: #666;
         }
 
         .icons-container {
             display: flex;
             overflow-x: auto;
             padding: 10px 0;
-
-            /* Um fundo para destacar a área dos ícones, se desejar */
+            gap: 20px;
         }
 
         .icon-box {
-            flex: 0 0 auto;
-            /* Não permite que os itens cresçam, mas sim que sejam rolagem */
-            margin-right: 16px;
-            color: #6c6c6c;
+            width: 100px;
+            height: 100px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            margin: 12px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
             text-align: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
         }
 
         .icon-box:hover {
-            color: #ff7206;
+            transform: translateY(-5px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
+
 
 
 
@@ -145,54 +171,85 @@
             height: 300px;
             width: auto;
         }
+
+        h1 {
+            font-size: 25px;
+            margin-top: 15px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .container22{
+            display: flex;
+            flex-direction: row;
+            background-color: #ffffff00;
+            margin-top: 35px;
+            height: 40vh;
+
+        }
+
+        .container23{
+            width: 300px;
+            height: auto;
+            background-color: #6c6c6c00;
+            border-radius: 15px;
+            margin:30px;
+        }
+
+        .container24{
+            margin-top: 30px;
+        }
+
+        .container24 button{
+            background-color: rgb(0, 235, 0);
+        }
+
+        .container24 button:hover{
+            background-color: rgb(0, 197, 0);
+        }
     </style>
-    </style>
+
 </head>
 
 <body>
 
     <div class="navbar">
-        <img src="/Image/logo.jpg" alt="Logo" style="height: 75px;"> <!-- Certifique-se que o caminho está correto -->
-        <!-- Outros elementos da navbar, se necessário -->
-        
+        <img src="/Image/venha junto.png" alt="Logo" class="logo">
         <div class="icons-container">
-            <i class="bi bi-person-circle icon"></i> <!-- Ícone de login -->
+            <i class="bi bi-person-circle icon" onclick="toggleDropdown()"></i>
             <div id="myDropdown" class="dropdown-menu">
                 <a href="./Cadastro.html">Cadastre-se</a><br>
                 <a href="./Login.html">Login</a>
             </div>
         </div>
     </div>
-    
-    
 
-    
+
     <div class="content">
         <div class="icons-container">
-            <div class="icon-box"><i class="bi bi-house-door"></i>
-                <div>Quarto</div>
+            <a href="/hoteis.html"><div class="icon-box"><i class="bi bi-house-door"></i></a>
+                <div>Hotéis</div>
             </div>
-            <div class="icon-box"><i class="bi bi-sun"></i>
-                <div>Praia</div>
+            <a href="/Estadio.html"> <div class="icon-box"><i class="bi bi-trophy"></i></a>
+                <div>Estádios & Arenas</div>
             </div>
-            <div class="icon-box"><i class="bi bi-droplet-half"></i>
-                <div>Piscina</div>
+            <a href="/Parque.html"><div class="icon-box"><i class="bi bi-patch-question"></i></a>
+                <div>Parques & Praças</div>
             </div>
-            <div class="icon-box"><i class="bi bi-tree"></i>
-                <div>Fazendas</div>
+            <a href="/exposição.html"><div class="icon-box"><i class="bi bi-tree"></i></a>
+                <div>Exposições</div>
             </div>
-            <div class="icon-box"><i class="bi bi-house"></i>
-                <div>Casas</div>
+            <a href="/Show.html"><div class="icon-box"> <i class="bi bi-house"></i></a>
+                <div>Shows & Eventos</div>
             </div>
-            <div class="icon-box"><i class="bi bi-cup-straw"></i>
-                <div>Bares</div>
+            <a href="/Restaurantes.html"><div class="icon-box"><i class="bi bi-cup-straw"></i></a>
+                <div>Bares & Restaurantes</div>
             </div>
-            <div class="icon-box"><i class="bi bi-film"></i>
+            <a href="/Cinemas.html"><div class="icon-box"><i class="bi bi-film"></i></a>
                 <div>Cinemas</div>
             </div>
-
         </div>
     </div>
+
 
 
     <!-- Carrosséis lado a lado -->
@@ -213,17 +270,17 @@
                     <!-- Conteúdo do Carrossel -->
                     <div class="carousel-inner">
                         <div class="carousel-item active">
-                            <img src="/Image/Design sem nome (35).png" class="d-block w-100" alt="...">
+                            <img src="/Home/teatro.png" class="d-block w-100" alt="...">
                         </div>
                         <div class="carousel-item">
-                            <img src="/Image/Design sem nome (36).png" class="d-block w-100" alt="...">
+                            <img src="/Home/teatroo.png" class="d-block w-100" alt="...">
                         </div>
                         <div class="carousel-item">
-                            <img src="/Image/Design sem nome (37).png" class="d-block w-100" alt="...">
+                            <img src="/Home/teatro4.png" class="d-block w-100" alt="...">
                         </div>
                     </div>
                 </div>
-                <h1>Nome</h1>
+                <h1>Teatros</h1>
                 <p>126km de distancia</p>
                 <p>custo - baixo</p>
             </div>
@@ -243,17 +300,17 @@
                     <!-- Conteúdo do Carrossel -->
                     <div class="carousel-inner">
                         <div class="carousel-item active">
-                            <img src="/Image/Design sem nome (39).png" class="d-block w-100" alt="...">
+                            <img src="/Home/restaurante.png" class="d-block w-100" alt="...">
                         </div>
                         <div class="carousel-item">
-                            <img src="/Image/Design sem nome (36).png" class="d-block w-100" alt="...">
+                            <img src="/Home/restaurante2.png" class="d-block w-100" alt="...">
                         </div>
                         <div class="carousel-item">
-                            <img src="/Image/Design sem nome (35).png" class="d-block w-100" alt="...">
+                            <img src="/Home/restaurante3.png" class="d-block w-100" alt="...">
                         </div>
                     </div>
                 </div>
-                <h1>Nome</h1>
+                <h1>Restaurantes</h1>
                 <p>126km de distancia</p>
                 <p>custo - baixo</p>
             </div>
@@ -273,17 +330,17 @@
                     <!-- Conteúdo do Carrossel -->
                     <div class="carousel-inner">
                         <div class="carousel-item active">
-                            <img src="/Image/Design sem nome (39).png" class="d-block w-100" alt="...">
+                            <img src="/Home/cinema.png" class="d-block w-100" alt="...">
                         </div>
                         <div class="carousel-item">
-                            <img src="/Image/Design sem nome (36).png" class="d-block w-100" alt="...">
+                            <img src="/Home/cinema2.png" class="d-block w-100" alt="...">
                         </div>
                         <div class="carousel-item">
-                            <img src="/Image/Design sem nome (35).png" class="d-block w-100" alt="...">
+                            <img src="/Home/cinema3.png" class="d-block w-100" alt="...">
                         </div>
                     </div>
                 </div>
-                <h1>Nome</h1>
+                <h1>Cinemas</h1>
                 <p>126km de distancia</p>
                 <p>custo - baixo</p>
             </div>
@@ -303,17 +360,17 @@
                     <!-- Conteúdo do Carrossel -->
                     <div class="carousel-inner">
                         <div class="carousel-item active">
-                            <img src="/Image/Design sem nome (39).png" class="d-block w-100" alt="...">
+                            <img src="/Home/Parque.png" class="d-block w-100" alt="...">
                         </div>
                         <div class="carousel-item">
-                            <img src="/Image/Design sem nome (36).png" class="d-block w-100" alt="...">
+                            <img src="/Home/Parque2.png" class="d-block w-100" alt="...">
                         </div>
                         <div class="carousel-item">
-                            <img src="/Image/Design sem nome (35).png" class="d-block w-100" alt="...">
+                            <img src="/Home/Parque3.png" class="d-block w-100" alt="...">
                         </div>
                     </div>
                 </div>
-                <h1>Nome</h1>
+                <h1>Parques</h1>
                 <p>126km de distancia</p>
                 <p>custo - baixo</p>
             </div>
@@ -333,17 +390,17 @@
                     <!-- Conteúdo do Carrossel -->
                     <div class="carousel-inner">
                         <div class="carousel-item active">
-                            <img src="/Image/Design sem nome (39).png" class="d-block w-100" alt="...">
+                            <img src="/Home/Eventos.png" class="d-block w-100" alt="...">
                         </div>
                         <div class="carousel-item">
-                            <img src="/Image/Design sem nome (36).png" class="d-block w-100" alt="...">
+                            <img src="/Home/evento2.png" class="d-block w-100" alt="...">
                         </div>
                         <div class="carousel-item">
-                            <img src="/Image/Design sem nome (35).png" class="d-block w-100" alt="...">
+                            <img src="/Home/evento3.png" class="d-block w-100" alt="...">
                         </div>
                     </div>
                 </div>
-                <h1>Nome</h1>
+                <h1>Eventos</h1>
                 <p>126km de distancia</p>
                 <p>custo - baixo</p>
             </div>
@@ -362,17 +419,17 @@
                     <!-- Conteúdo do Carrossel -->
                     <div class="carousel-inner">
                         <div class="carousel-item active">
-                            <img src="/Image/Design sem nome (39).png" class="d-block w-100" alt="...">
+                            <img src="/Home/arena.png.jpg" class="d-block w-100" alt="...">
                         </div>
                         <div class="carousel-item">
-                            <img src="/Image/Design sem nome (36).png" class="d-block w-100" alt="...">
+                            <img src="/Home/arena2.png.jpg" class="d-block w-100" alt="...">
                         </div>
                         <div class="carousel-item">
-                            <img src="/Image/Design sem nome (35).png" class="d-block w-100" alt="...">
+                            <img src="/Home/arena3.png.jpg" class="d-block w-100" alt="...">
                         </div>
                     </div>
                 </div>
-                <h1>Nome</h1>
+                <h1>Estádios</h1>
                 <p>126km de distancia</p>
                 <p>custo - baixo</p>
             </div>
@@ -391,17 +448,17 @@
                     <!-- Conteúdo do Carrossel -->
                     <div class="carousel-inner">
                         <div class="carousel-item active">
-                            <img src="/Image/Design sem nome (39).png" class="d-block w-100" alt="...">
+                            <img src="/Home/shows.png" class="d-block w-100" alt="...">
                         </div>
                         <div class="carousel-item">
-                            <img src="/Image/Design sem nome (36).png" class="d-block w-100" alt="...">
+                            <img src="/Home/shows2.png" class="d-block w-100" alt="...">
                         </div>
                         <div class="carousel-item">
-                            <img src="/Image/Design sem nome (35).png" class="d-block w-100" alt="...">
+                            <img src="/Home/shows3.png" class="d-block w-100" alt="...">
                         </div>
                     </div>
                 </div>
-                <h1>Nome</h1>
+                <h1>Shows</h1>
                 <p>126km de distancia</p>
                 <p>custo - baixo</p>
             </div>
@@ -420,17 +477,17 @@
                     <!-- Conteúdo do Carrossel -->
                     <div class="carousel-inner">
                         <div class="carousel-item active">
-                            <img src="/Image/Design sem nome (39).png" class="d-block w-100" alt="...">
+                            <img src="/Home/exposições.png.jpeg" class="d-block w-100" alt="...">
                         </div>
                         <div class="carousel-item">
-                            <img src="/Image/Design sem nome (36).png" class="d-block w-100" alt="...">
+                            <img src="/Home/exposições1.png.jpeg" class="d-block w-100" alt="...">
                         </div>
                         <div class="carousel-item">
-                            <img src="/Image/Design sem nome (35).png" class="d-block w-100" alt="...">
+                            <img src="/Home/exposições2.png.jpg" class="d-block w-100" alt="...">
                         </div>
                     </div>
                 </div>
-                <h1>Nome</h1>
+                <h1>Exposições</h1>
                 <p>126km de distancia</p>
                 <p>custo - baixo</p>
             </div>
@@ -438,9 +495,23 @@
             <!--Quarta coluna-->
             <!--Quinta coluna-->
         </div>
+        <!--Precisa ser colocado ua imagem-->
+        <div style="background-color: #0000003d; height: 30vh; border-radius: 15px; margin-top: 25px;"
+            class="container-sm"><a><img src="#"></a></div>
+
+        <div class="container22">
+            <div class="container23"><a><img src="./Eventos.png" width="300" height="auto" style="border-radius: 15px;"></a>
+        </div>
+            <div class="container24">
+                <h1>Título</h1>
+                <h3>Local</h3>
+                <button type="button" class="btn btn-primary btn-lg">Conhecer agora</button>
+            </div>
+            
+        </div>
     </div>
 
-    <footer style="background-color: #dae0e6; color: #000000; padding: 20px 0;">
+    <footer style="background-color: #FFAF14; color: #ffffff;margin-top: 10vh; padding: 20px 0;">
         <div class="container">
             <div class="row">
                 <!-- Informações de Contato -->
@@ -473,36 +544,32 @@
 
     <!--Sanduiche-->
     <script>
-        document.querySelectorAll('.icon').forEach(item => {
-        item.onclick = function() {
-            let dropdown = this.nextElementSibling;
-            if(dropdown) {
-                dropdown.classList.toggle("show");
-            } else {
-                document.getElementById("myDropdown").classList.toggle("show");
-            }
-        };
-    });
+        function toggleDropdown() {
+            document.getElementById("myDropdown").classList.toggle("show");
+        }
 
-    // Fecha o menu se o usuário clica fora dele
-    window.onclick = function(event) {
-        if (!event.target.matches('.icon')) {
-            var dropdowns = document.getElementsByClassName("dropdown-menu");
-            var i;
-            for (i = 0; i < dropdowns.length; i++) {
-                var openDropdown = dropdowns[i];
-                if (openDropdown.classList.contains('show')) {
-                    openDropdown.classList.remove('show');
+        window.onclick = function(event) {
+            if (!event.target.matches('.icon')) {
+                var dropdowns = document.getElementsByClassName("dropdown-menu");
+                for (var i = 0; i < dropdowns.length; i++) {
+                    var openDropdown = dropdowns[i];
+                    if (openDropdown.classList.contains('show')) {
+                        openDropdown.classList.remove('show');
+                    }
                 }
             }
         }
-    };
-
     </script>
+
+
+        // Fecha o menu se o usuário clica fora dele
+        
 
 
 
     <!-- Inserindo o VLibras -->
+
+
     <div vw class="enabled">
         <div vw-access-button class="active"></div>
         <div vw-plugin-wrapper>
