@@ -6,6 +6,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
+
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -25,6 +26,61 @@ public class UserController {
         return modelAndView;
     }
 
+    @RequestMapping("/cinemas")
+    public ModelAndView cinemas() {
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.setViewName("Cinemas"); // nome do arquivo HTML (sem .html)
+        return modelAndView;
+    }
+
+    @RequestMapping("/estadio")
+    public ModelAndView estadio() {
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.setViewName("Estadio"); // nome do arquivo HTML (sem .html)
+        return modelAndView;
+    }
+
+    @RequestMapping("/exposição")
+    public ModelAndView esposicao() {
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.setViewName("exposição"); // nome do arquivo HTML (sem .html)
+        return modelAndView;
+    }
+
+    @RequestMapping("/hoteis")
+    public ModelAndView hoteis() {
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.setViewName("hoteis"); // nome do arquivo HTML (sem .html)
+        return modelAndView;
+    }
+
+    @RequestMapping("/monetizar")
+    public ModelAndView monetizar() {
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.setViewName("Monetizar"); // nome do arquivo HTML (sem .html)
+        return modelAndView;
+    }
+
+    @RequestMapping("/parque")
+    public ModelAndView parque() {
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.setViewName("Parque"); // nome do arquivo HTML (sem .html)
+        return modelAndView;
+    }
+
+    @RequestMapping("/restaurantes")
+    public ModelAndView restaurantes() {
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.setViewName("Restaurantes"); // nome do arquivo HTML (sem .html)
+        return modelAndView;
+    }
+
+    @RequestMapping("/show")
+    public ModelAndView show() {
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.setViewName("Show"); // nome do arquivo HTML (sem .html)
+        return modelAndView;
+    }
 
     @RequestMapping("/login")
     public ModelAndView login() {
@@ -60,10 +116,10 @@ public class UserController {
     @PostMapping("/cadastrar")
     @ResponseBody
     public ModelAndView cadastrarUsuario(@RequestParam String name,
-                                   @RequestParam String sobrenome,
-                                   @RequestParam String dataNascimento,
-                                   @RequestParam String email,
-                                   @RequestParam String password) throws ParseException {
+                                         @RequestParam String sobrenome,
+                                         @RequestParam String dataNascimento,
+                                         @RequestParam String email,
+                                         @RequestParam String password) throws ParseException {
 
         ModelAndView modelAndView = new ModelAndView();
 
