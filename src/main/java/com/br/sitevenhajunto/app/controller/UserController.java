@@ -40,7 +40,7 @@ public class UserController {
         return modelAndView;
     }
 
-    @RequestMapping("/exposição")
+    @RequestMapping("/exposicao")
     public ModelAndView esposicao() {
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.setViewName("exposição"); // nome do arquivo HTML (sem .html)

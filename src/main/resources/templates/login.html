@@ -12,6 +12,7 @@
             align-items: center;
             height: 100vh; /* Definindo a altura da tela inteira */
             margin: 0; /* Removendo margens padrão */
+            font-family: Arial, Helvetica, sans-serif; /* para mudar a fonte */
         }
 
         .login {
@@ -23,8 +24,9 @@
             padding: 20px;
             border-radius: 5px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            width: 500px; height: 500px;
-            font-family: Arial, Helvetica, sans-serif; /*para mudar a fonte*/
+            width: 90%;
+            max-width: 500px;
+            box-sizing: border-box;
         }
 
         .login form {
@@ -34,7 +36,8 @@
             padding: 10px;
             border-radius: 5px;
             text-align: center; /* Centralizando o conteúdo */
-            width: 500px;
+            width: 100%;
+            box-sizing: border-box;
         }
 
         .login input[type="text"],
@@ -54,18 +57,26 @@
             background-color: #007bff;
             justify-content: center;
             align-items: center;
-            width: 250px;
+            width: 50%;
             color: #fff;
             border: none;
             cursor: pointer;
         }
 
-        .login .texto{
+        .login .texto {
             color: #007bff;
         }
 
+        @media (min-width: 768px) {
+            .login {
+                width: 60%;
+                max-width: 400px;
+            }
 
-
+            .login input[type="submit"] {
+                width: 250px;
+            }
+        }
     </style>
 </head>
 <body>
